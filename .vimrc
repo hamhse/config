@@ -48,7 +48,7 @@ syntax enable
 if has("gui_running")
    set bg=dark
    set t_Co=256
-   colorscheme=railscasts
+   colorscheme railscasts
    " Disable the toolbar
    set guioptions-=m  "remove menu barf
    set guioptions-=T  "remove toolbar
