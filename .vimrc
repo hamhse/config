@@ -73,6 +73,8 @@ let g:clang_format#style_options = {
 			\ "IndentWidth" : 8,
 			\ "UseTab" : "Always",
 			\ "AllowShortIfStatementsOnASingleLine" : "false",
+                        \ "BreakBeforeBraces": "Linux",
+                        \ "ColumnLimit": "80",
 			\ "IndentCaseLabels" : "false", }
 
 "autocmd FileType c ClangFormatAutoEnable

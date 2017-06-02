@@ -4,4 +4,5 @@ UseTab: Always
 BreakBeforeBraces: Linux
 AllowShortIfStatementsOnASingleLine: false
 IndentCaseLabels: false
-
+BreakBeforeBraces: Linux
+ColumnLimit: 80
