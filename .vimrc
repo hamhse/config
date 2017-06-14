@@ -1,6 +1,11 @@
 
+
 " Plug settings
-call plug#begin('~/.vim/plugged')
+if has('win32') || has('win64')
+	call plug#begin('$HOME/vimfiles/plugged')
+else
+	call plug#begin('$HOME/.vim/plugged')
+endif
 
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -48,7 +53,7 @@ syntax enable
 if has("gui_running")
    set bg=dark
    set t_Co=256
-   colorscheme=railscasts
+   colorscheme railscasts
    " Disable the toolbar
    set guioptions-=m  "remove menu barf
    set guioptions-=T  "remove toolbar
@@ -58,9 +63,19 @@ if has("gui_running")
 else
    set t_Co=256
    set bg=dark
-   colorscheme railscasts
+   if has('win32') || has('win64')
+	  colorscheme default
+   else
+	  colorscheme railscasts
+   endif
    "set nocursorline
 endif
+
+" Font
+if has('win32') || has('win64')
+	set guifont=Consolas:h12
+endif
+
 
 "hi Visual term=reverse cterm=reverse guibg=Grey
 
