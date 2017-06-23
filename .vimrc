@@ -15,8 +15,6 @@ Plug 'chazy/cscope_maps'
 Plug 'vim-scripts/MultipleSearch2.vim'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'rhysd/vim-clang-format'
 Plug 'vivien/vim-linux-coding-style'
 
@@ -32,11 +30,6 @@ let Tlist_Use_Right_Window = 1
 
 " Status bar
 "set laststatus=2
-
-" Airline
-"au VimEnter * AirlineToggle
-"let g:loaded_airline = 1
-"let g:airline_theme='dark'
 
 " Vim settings
 set hlsearch
