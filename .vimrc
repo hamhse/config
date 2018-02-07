@@ -1,4 +1,7 @@
 
+if has('win32') || has('win64')
+	let $HOME = $USERPROFILE
+endif
 
 " Plug settings
 if has('win32') || has('win64')
@@ -13,10 +16,10 @@ Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/Mark--Karkat'
 Plug 'chazy/cscope_maps'
 Plug 'vim-scripts/MultipleSearch2.vim'
-Plug 'jpo/vim-railscasts-theme'
 Plug 'majutsushi/tagbar'
 Plug 'rhysd/vim-clang-format'
 Plug 'vivien/vim-linux-coding-style'
+Plug 'tomasr/molokai'
 
 call plug#end()
 
@@ -25,28 +28,43 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeHighlightCursorline=0
 
-" Taglit on the right side
+" Taglist on the right side
 let Tlist_Use_Right_Window = 1
 
 " Status bar
-"set laststatus=2
+" set laststatus=2
 
 " Vim settings
-set hlsearch
+set hlsearch 		 " highlight search terms
+set incsearch 		 " show search matches as you type
 set foldenable
 set nocompatible
-set nocompatible
 filetype plugin on
-syntax on
 set listchars=tab:>-,trail:-,eol:.
-syntax enable
+set autoindent 		 " always set autoindenting on
+set copyindent 		 " copy the previous indentation on autoindenting
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set title                " change the terminal's title
+"set visualbell          
+set noerrorbells         " don't beep
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set nobackup
+set noswapfile
+set pastetoggle=<F2>
 
+
+if &t_Co > 2 || has("gui_running")
+   " switch syntax highlighting on, when the terminal has colors
+   syntax enable
+   syntax on
+endif
 
 " Theme
 if has("gui_running")
    set bg=dark
    set t_Co=256
-   colorscheme railscasts
+   colorscheme default
    " Disable the toolbar
    set guioptions-=m  "remove menu barf
    set guioptions-=T  "remove toolbar
@@ -59,7 +77,7 @@ else
    if has('win32') || has('win64')
 	  colorscheme default
    else
-	  colorscheme railscasts
+	  colorscheme molokai
    endif
    "set nocursorline
 endif
@@ -70,7 +88,7 @@ if has('win32') || has('win64')
 endif
 
 
-"hi Visual term=reverse cterm=reverse guibg=Grey
+hi Visual term=reverse cterm=reverse guibg=Grey
 
 " Linux Coding
 
