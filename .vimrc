@@ -20,6 +20,8 @@ Plug 'majutsushi/tagbar'
 Plug 'rhysd/vim-clang-format'
 Plug 'vivien/vim-linux-coding-style'
 Plug 'tomasr/molokai'
+Plug 'dracula/vim'
+
 
 call plug#end()
 
