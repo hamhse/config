@@ -18,10 +18,11 @@ Plug 'chazy/cscope_maps'
 Plug 'vim-scripts/MultipleSearch2.vim'
 Plug 'majutsushi/tagbar'
 Plug 'rhysd/vim-clang-format'
-Plug 'vivien/vim-linux-coding-style'
-Plug 'tomasr/molokai'
-Plug 'dracula/vim'
-
+Plug 'pbrisbin/vim-colors-off'
+Plug 'fxn/vim-monochrome'
+Plug 'vim-airline/vim-airline'
+Plug 'reedes/vim-colors-pencil'
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -79,7 +80,7 @@ else
    if has('win32') || has('win64')
 	  colorscheme default
    else
-	  colorscheme molokai
+	  colorscheme pencil
    endif
    "set nocursorline
 endif
@@ -89,8 +90,20 @@ if has('win32') || has('win64')
 	set guifont=Consolas:h12
 endif
 
+let g:airline_theme = 'pencil'
+"let g:pencil_higher_contrast_ui = 1  " 0=blue (def), 1=normal
+"let g:pencil_neutral_code_bg = 1 " 0=gray (def), 1=normal
+"let g:pencil_gutter_color = 1      " 0=mono (def), 1=color
+let g:pencil_spell_undercurl = 1       " 0=underline, 1=undercurl (def)
 
-hi Visual term=reverse cterm=reverse guibg=Grey
+"hi Visual term=reverse cterm=reverse guibg=reverse
+"hi Visual cterm=reverse ctermbg=black
+highlight SpecialKey ctermfg=darkgrey guifg=grey70
+
+"highlight ExtraWhitespace ctermbg=red guibg=red
+"match ExtraWhitespace /\s\+$/
+
+"hi Visual term=reverse cterm=reverse guibg=Grey
 
 " Linux Coding
 
